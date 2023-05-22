@@ -14,7 +14,9 @@ inputs:
   subdir:
     required: false
     description: directory where Cargo.toml is placed
+  cargoConfig:
+    required: false
+    description: cargo config param
 runs:
   using: 'docker'
   image: 'Dockerfile'
-

@@ -20,6 +20,7 @@ function process_variant() {
     _args="deb"
     [ "$1" != "default" ] && _args="$_args --variant $1"
     [ -n "$INPUT_DEBVERSION" ] && _args="$_args --deb-version $INPUT_DEBVERSION"
+    [ -n "$INPUT_CARGOCONFIG"] && _args="--config $INPUT_CARGOCONFIG $_args"
     echo "cargo $_args" >&2
     if test -z "$INPUT_SUBDIR"; then
     	_outp="$(cargo $_args | tail -1)"
